@@ -1,0 +1,19 @@
+{
+  "skills": [
+    {
+      "name": "binlee-articles",
+      "description": "李滨先生文章库 - 549篇医美行业文章",
+      "version": "1.0.0"
+    },
+    {
+      "name": "binlee-advisor",
+      "description": "医美行业顾问 - 经营管理咨询",
+      "version": "1.0.0"
+    },
+    {
+      "name": "binlee-consumer",
+      "description": "医美消费指南 - 消费者决策支持",
+      "version": "1.0.0"
+    }
+  ]
+}
