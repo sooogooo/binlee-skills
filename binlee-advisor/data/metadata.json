@@ -1,0 +1,48 @@
+{
+  "skill_name": "binlee-advisor",
+  "version": "1.0.0",
+  "created": "2026-05-12",
+  "based_on": "李滨先生 549 篇医美文章",
+  "source": "https://drli.beaucare.org",
+  "description": "医美行业顾问 - 提供经营管理、消费选择、行业趋势等方面的专业咨询",
+  "capabilities": [
+    "经营管理咨询",
+    "行业趋势分析",
+    "医美消费选择",
+    "专业观点查询"
+  ],
+  "topics": [
+    "战略规划",
+    "品牌营销",
+    "团队管理",
+    "竞争策略",
+    "消费决策",
+    "行业政策",
+    "市场分析"
+  ],
+  "data_sources": {
+    "articles_dir": "~/drli_articles/",
+    "index_file": "~/drli_articles_index.json",
+    "article_count": 549
+  },
+  "consultation_areas": {
+    "for_operators": [
+      "如何从0到1开一家医美机构",
+      "中小机构如何应对公立医美竞争",
+      "医美机构的品牌建设策略",
+      "如何提升团队凝聚力和专业能力"
+    ],
+    "for_consumers": [
+      "如何选择靠谱的医美机构",
+      "如何判断医生的专业水平",
+      "医美消费前应该了解什么",
+      "如何避免医美消费陷阱"
+    ],
+    "for_industry": [
+      "医美行业未来3年发展趋势",
+      "当前政策对行业的影响",
+      "民营医美的生存之道",
+      "医生个人IP如何打造"
+    ]
+  }
+}

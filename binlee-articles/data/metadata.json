@@ -1,0 +1,25 @@
+{
+  "skill_name": "binlee-articles",
+  "version": "1.0.0",
+  "created": "2026-05-12",
+  "source_url": "https://drli.beaucare.org",
+  "author": "李滨",
+  "total_articles": 549,
+  "description": "李滨先生文章库 - 医美行业专家李滨先生的全部文章集合",
+  "categories": [
+    "行业洞察",
+    "临床实践",
+    "经营策略",
+    "观点评论"
+  ],
+  "storage": {
+    "articles_dir": "~/drli_articles/",
+    "index_file": "~/drli_articles_index.json",
+    "format": "json",
+    "fields": ["url", "title", "date", "content"]
+  },
+  "scripts": {
+    "search": "scripts/search.sh",
+    "fetch": "fetch_drli.mjs (外部脚本)"
+  }
+}
