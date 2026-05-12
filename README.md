@@ -1,6 +1,10 @@
 # Binlee Skills
 
-基于李滨先生医美文章的 AI Terminal Skills 集合，为医美从业者和消费者提供专业咨询支持。
+基于李滨先生医美文章的 AI Skills 集合，为医美从业者和消费者提供专业咨询支持。
+
+**公众号推荐**：李滨先生医美文章库 | 549篇行业洞察，涵盖经营管理、消费避坑、趋势分析。机构经营者、从业者、消费者必备指南。
+
+---
 
 ## 技能列表
 
@@ -35,122 +39,311 @@
 
 ---
 
-## 安装指南
+## AI 终端安装指南
 
-### Claude Code（推荐）
+### 1. Claude Code（桌面应用）
 
-**方法一：复制技能目录**
+Claude Code 是 Anthropic 官方推出的 AI 编程助手，支持 Skills 扩展。
+
+**安装步骤：**
 ```bash
 # 克隆仓库
 git clone https://github.com/sooogooo/binlee-skills.git
 
 # 复制技能到 Claude Code skills 目录
+mkdir -p ~/.claude/skills
 cp -r binlee-skills/binlee-articles ~/.claude/skills/
 cp -r binlee-skills/binlee-advisor ~/.claude/skills/
 cp -r binlee-skills/binlee-consumer ~/.claude/skills/
+
+# 或使用符号链接保持更新
+ln -s ~/binlee-skills/binlee-articles ~/.claude/skills/
+ln -s ~/binlee-skills/binlee-advisor ~/.claude/skills/
+ln -s ~/binlee-skills/binlee-consumer ~/.claude/skills/
 ```
 
-**方法二：符号链接（保持更新）**
+**使用方式：**
+- 重启 Claude Code
+- 在对话中直接调用：`/binlee-advisor 如何应对公立医美竞争？`
+
+---
+
+### 2. Claude CLI（终端命令行）
+
+Anthropic 官方 CLI 工具，支持对话和 Skills 调用。
+
+**安装步骤：**
 ```bash
+# 安装 Claude CLI
+npm install -g @anthropic-ai/claude-code
+
+# 或通过 Homebrew 安装
+brew install anthropic/formulas/claude-code
+
+# 克隆仓库
 git clone https://github.com/sooogooo/binlee-skills.git
-ln -s ~/binlee-skills/binlee-articles ~/.claude/skills/binlee-articles
-ln -s ~/binlee-skills/binlee-advisor ~/.claude/skills/binlee-advisor
-ln -s ~/binlee-skills/binlee-consumer ~/.claude/skills/binlee-consumer
+
+# 复制技能到 ~/.claude/skills/
+mkdir -p ~/.claude/skills
+cp -r binlee-skills/binlee-* ~/.claude/skills/
 ```
 
----
-
-### Cursor AI
-
-1. 打开 Cursor → 设置（Settings）→ Extensions
-2. 找到 "Skills" 或 "Claude" 相关扩展并启用
-3. 将技能目录复制到 Cursor 指定的 skills 目录
+**使用方式：**
 ```bash
-# 通常位于 ~/.cursor/skills/
-cp -r binlee-skills/binlee-* ~/.cursor/skills/
+claude --skill binlee-advisor "如何应对公立医美竞争"
+claude --skill binlee-consumer "如何选择靠谱的医美机构"
 ```
-4. 重启 Cursor，在 AI Chat 中调用技能
 
 ---
 
-### VS Code + Copilot
+### 3. OpenAI Codex CLI
 
-1. VS Code 安装 GitHub Copilot 扩展
-2. 创建 skills 目录并复制技能
+OpenAI 官方 CLI 工具，支持编程和 Skills 扩展。
+
+**安装步骤：**
 ```bash
-mkdir -p ~/.vscode/skills
-cp -r binlee-skills/binlee-* ~/.vscode/skills/
+# 安装 Codex CLI
+pip install openai-codex
+# 或
+npm install -g @openai/codex
+
+# 克隆仓库
+git clone https://github.com/sooogooo/binlee-skills.git
+
+# 复制技能到 ~/.codex/skills/
+mkdir -p ~/.codex/skills
+cp -r binlee-skills/binlee-* ~/.codex/skills/
 ```
-3. 重启 VS Code
-4. 在 GitHub Copilot Chat 面板中使用 `/binlee-advisor` 等命令
 
----
-
-### Windsurf
-
-1. 打开 Windsurf → 设置（Settings）→ Skills
-2. 将技能目录复制到 Windsurf skills 目录
+**使用方式：**
 ```bash
-cp -r binlee-skills/binlee-* ~/.windsurf/skills/
+codex --skill binlee-advisor "医美行业趋势分析"
 ```
-3. 重启 Windsurf
-4. 在 AI Chat 中调用技能
 
 ---
 
-### Trae AI
+### 4. Cursor（AI 编程编辑器）
 
-1. 打开 Trae → 设置 → 技能管理
-2. 复制技能到 Trae 指定目录
-```bash
-cp -r binlee-skills/binlee-* ~/.trae/skills/
-```
-3. 重启 Trae，在 AI Chat 中使用技能
+支持 Skills 扩展的 AI 编程工具。
 
----
-
-### Jan
-
-```bash
-# Jan 是一个本地运行的 AI 终端
-# 将技能复制到 Jan 的 skills 目录
-cp -r binlee-skills/binlee-* ~/.jan/skills/
-```
-然后在 Jan 的对话界面中调用。
-
----
-
-### FastChat / ChatUI
-
+**安装步骤：**
 ```bash
 # 克隆仓库
 git clone https://github.com/sooogooo/binlee-skills.git
 
-# 复制到 skills 目录
-cp -r binlee-skills/binlee-* /path/to/your/chatui/skills/
+# 复制技能到 Cursor skills 目录
+mkdir -p ~/.cursor/skills
+cp -r binlee-skills/binlee-* ~/.cursor/skills/
+```
+
+**使用方式：**
+1. 打开 Cursor → 设置 → Extensions
+2. 启用 "Skills" 相关扩展
+3. 在 AI Chat 中调用技能
+
+---
+
+### 5. VS Code + GitHub Copilot
+
+通过 Copilot Chat 使用 Skills。
+
+**安装步骤：**
+```bash
+# 克隆仓库
+git clone https://github.com/sooogooo/binlee-skills.git
+
+# 复制技能到 VS Code skills 目录
+mkdir -p ~/.vscode/skills
+cp -r binlee-skills/binlee-* ~/.vscode/skills/
+```
+
+**使用方式：**
+1. VS Code 安装 GitHub Copilot 扩展
+2. 重启 VS Code
+3. 在 Copilot Chat 中使用 `/binlee-advisor` 等命令
+
+---
+
+### 6. Windsurf
+
+支持 AI Agents 和 Skills 的编程工具。
+
+**安装步骤：**
+```bash
+# 克隆仓库
+git clone https://github.com/sooogooo/binlee-skills.git
+
+# 复制技能到 Windsurf skills 目录
+mkdir -p ~/.windsurf/skills
+cp -r binlee-skills/binlee-* ~/.windsurf/skills/
+```
+
+**使用方式：**
+1. 打开 Windsurf → Settings → Skills
+2. 重启 Windsurf
+3. 在 AI Chat 中调用
+
+---
+
+### 7. Trae AI
+
+国产 AI 编程工具，支持 Skills 扩展。
+
+**安装步骤：**
+```bash
+# 克隆仓库
+git clone https://github.com/sooogooo/binlee-skills.git
+
+# 复制技能到 Trae skills 目录
+mkdir -p ~/.trae/skills
+cp -r binlee-skills/binlee-* ~/.trae/skills/
+```
+
+**使用方式：**
+1. 打开 Trae → 设置 → 技能管理
+2. 重启 Trae
+3. 在 AI Chat 中使用技能
+
+---
+
+### 8. GitHub CLI + Copilot
+
+通过 GitHub CLI 使用 Copilot 和 Skills。
+
+**安装步骤：**
+```bash
+# 安装 GitHub CLI 和 Copilot 扩展
+gh extension install github/copilot-cli
+
+# 克隆仓库
+git clone https://github.com/sooogooo/binlee-skills.git
+
+# 复制技能到 ~/.github/skills/
+mkdir -p ~/.github/skills
+cp -r binlee-skills/binlee-* ~/.github/skills/
+```
+
+**使用方式：**
+```bash
+gh copilot skill binlee-advisor "如何应对公立医美竞争"
 ```
 
 ---
 
-### AnythingLLM
+### 9. JetBrains + AI Assistant
 
+JetBrains 全家桶的 AI 助手支持 Skills。
+
+**安装步骤：**
 ```bash
-# 将技能复制到 AnythingLLM 的 skills 目录
-cp -r binlee-skills/binlee-* ~/.anythingllm/skills/
+# 克隆仓库
+git clone https://github.com/sooogooo/binlee-skills.git
+
+# 复制技能到 JetBrains skills 目录
+mkdir -p ~/.config/JetBrains/skills
+cp -r binlee-skills/binlee-* ~/.config/JetBrains/skills/
 ```
-然后在 Workspace 中调用。
+
+**使用方式：**
+1. WebStorm / IDEA 安装 AI Assistant 插件
+2. 重启 IDE
+3. 在 AI Assistant 中调用技能
 
 ---
 
-### 通用 AI Terminal
+### 10. Tabnine
 
-大多数 AI Terminal 都遵循 `~/.claude/skills/` 或 `~/.skills/` 路径约定：
+AI 代码补全工具，支持 Skills 扩展。
+
+**安装步骤：**
+```bash
+# 克隆仓库
+git clone https://github.com/sooogooo/binlee-skills.git
+
+# 复制技能到 Tabnine skills 目录
+mkdir -p ~/.tabnine/skills
+cp -r binlee-skills/binlee-* ~/.tabnine/skills/
+```
+
+---
+
+### 11. Codeium
+
+免费 AI 编程助手，支持 Skills。
+
+**安装步骤：**
+```bash
+# 克隆仓库
+git clone https://github.com/sooogooo/binlee-skills.git
+
+# 复制技能到 Codeium skills 目录
+mkdir -p ~/.codeium/skills
+cp -r binlee-skills/binlee-* ~/.codeium/skills/
+```
+
+---
+
+### 12. Amazon CodeWhisperer
+
+AWS 官方 AI 编程助手。
+
+**安装步骤：**
+```bash
+# 克隆仓库
+git clone https://github.com/sooogooo/binlee-skills.git
+
+# 复制技能到 CodeWhisperer skills 目录
+mkdir -p ~/.aws/codewhisperer/skills
+cp -r binlee-skills/binlee-* ~/.aws/codewhisperer/skills/
+```
+
+---
+
+### 13. Continue（VS Code 扩展）
+
+开源 AI 编程助手，支持 Skills。
+
+**安装步骤：**
+```bash
+# 克隆仓库
+git clone https://github.com/sooogooo/binlee-skills.git
+
+# 复制技能到 Continue skills 目录
+mkdir -p ~/.continue/skills
+cp -r binlee-skills/binlee-* ~/.continue/skills/
+```
+
+---
+
+### 14. Cursor.sh（终端版）
+
+Cursor 的命令行版本。
+
+**安装步骤：**
+```bash
+# 安装 cursor.sh
+curl -fsSL https://cursor.sh/install.sh | sh
+
+# 克隆仓库
+git clone https://github.com/sooogooo/binlee-skills.git
+
+# 复制技能
+cp -r binlee-skills/binlee-* ~/.cursor/skills/
+```
+
+---
+
+### 15. Claude for Desktop（桌面应用）
+
+Anthropic 官方桌面应用。
+
+**安装步骤：**
+1. 下载 [Claude for Desktop](https://claude.ai/download)
+2. 克隆仓库并将技能复制到应用支持目录
 
 ```bash
-# 尝试以下路径
-cp -r binlee-skills/binlee-* ~/.claude/skills/
-# 或
-cp -r binlee-skills/binlee-* ~/.skills/
+git clone https://github.com/sooogooo/binlee-skills.git
+cp -r binlee-skills/binlee-* ~/Library/Application\ Support/Claude/Skills/
 ```
 
 ---
@@ -159,28 +352,29 @@ cp -r binlee-skills/binlee-* ~/.skills/
 
 安装完成后，可通过以下方式调用技能：
 
+### 方式一：斜杠命令
 ```
-# 行业咨询
 /binlee-advisor 如何应对公立医美的竞争？
-
-# 消费选择
 /binlee-consumer 如何选择靠谱的医美机构？
-
-# 文章检索
 /binlee-articles 搜索关于民营医美趋势的文章
 ```
 
-或直接对话，Claude 会自动识别并调用相关技能。
+### 方式二：自然语言对话
+直接描述你的问题，AI 会自动识别并调用相关技能。
+
+### 方式三：CLI 调用
+```bash
+claude --skill binlee-advisor "医美行业趋势分析"
+codex --skill binlee-consumer "玻尿酸选择指南"
+```
 
 ---
 
 ## 数据来源
 
-文章原文来源：[drli.beaucare.org](https://drli.beaucare.org)
-
-文章数量：549 篇
-
-文章主题：医美行业洞察、临床实践、经营策略、行业趋势等
+- **文章原文**：https://drli.beaucare.org
+- **文章总数**：549 篇
+- **主题分类**：行业洞察、临床实践、经营策略、观点评论
 
 ---
 
@@ -191,3 +385,7 @@ MIT License
 ## 作者
 
 李滨先生 - 医美行业专家
+
+---
+
+**立即体验**：https://github.com/sooogooo/binlee-skills
